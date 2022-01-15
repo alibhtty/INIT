@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto+Mono:wght@300;500");
+
+@font-face {
+    font-family: ocr-a;
+    src: url(https://ali-bhtty.web.app/assets/fonts/OCR-A.woff);
+}
+
+:root{
+    --primary-color: hsl(214, 84%, 56%);
+    --text-color: hsl(0,0%,31%);
+    --bg-color: hsl(0,0%,90%);
+    --bg-card-color: hsl(0,0%,98%);
+    --border-radius: .6em;
+    --transition: color 0.9s, background-color 0.4s ease-in-out;
+    --skills-bar-length: 0%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* background: #353535; */
+    background-color: #222;
+    /* color: #c4c4c4; */
+    color: rgb(85,215,178);
+    /* font-family: "Roboto Mono", sans-serif; */
+    font-family: ocr-a;
+    font-size: 1rem;
+    line-height: 1.45;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    background: #4f4f4f;
+    flex: 1 1 20%;
+    min-width: 300px;
+    padding: 3em;
+}
+
+.logo {
+    text-transform: lowercase;
+    margin-bottom: 2em;
+}
+
+@media (min-width: 1500px) {
+    .logo {
+        margin-bottom: 5em;
+    }
+}
+
+.logo span {
+    font-weight: 700;
+}
+
+.nav-item {
+    color: #737373;
+    text-decoration: none;
+    font-size: 1.7rem;
+    display: inline-block;
+    margin-right: 2em;
+}
+
+@media (min-width: 1500px) {
+    .nav-item {
+        display: block;
+        margin: 7vh 0;
+    }
+}
+
+.nav-item.active {
+    color: #c4c4c4;
+}
+
+.main-content {
+    padding: 2%;
+    flex: 1 1 80%;
+    min-height: 100vh;
+}
+
+.portfolio {
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+
+.portfolio-item {
+    /* background: #f96855; */
+    background: #000;
+    color: rgb(85,215,178);
+    /* color: #d61515; */
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    background-size: cover;
+    background-position: top left;
+    transition: all ease-in-out 300ms;
+    position: relative;
+    z-index: 10;
+    border-radius: var(--border-radius);
+}
+
+.portfolio-item.small {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.portfolio-item.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.portfolio-item.large {
+    grid-row: span 3;
+    grid-column: span 3;
+}
+
+.portfolio-item.tall {
+    grid-row: span 3;
+    grid-column: span 2;
+}
+
+.portfolio-item.wide {
+    grid-row: span 2;
+    grid-column: span 3;
+}
+
+.portfolio-item:hover {
+    color: red;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
+    transition: var(--transition);
+}
